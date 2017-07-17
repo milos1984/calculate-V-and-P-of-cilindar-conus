@@ -1,0 +1,65 @@
+<html>
+
+<head> </head>
+<body> 
+    
+unesite poluprecnik: <input id= "poluprecnik"  type="number" value="1"></input>
+</br></br>
+unesite visinu: <input id= "visina" type="number" value="1" ></input>
+ </br></br>
+ <button onclick="racunajZapreminuValjka()" >  Zapremina Valjka</button>
+<button onclick="racunajZapreminuKupe()" >  Zapremina Kupe</button>
+<button onclick="racunajPovrsinuValjka()" >  Povrsina Valjka</button>
+<button onclick="racunajPovrsinuKupe()" >  Povrsina Kupe</button>
+<p id="rezultat">test</p>
+
+</body>
+
+<script>
+function racunajZapreminuValjka() {
+        var r= document.getElementById("poluprecnik").value;
+        var H= document.getElementById("visina").value;
+        var ispis;
+            if (r>0 && H>0){
+                ispis=r*r*H*Math.PI;
+                    }
+                else ispis=" nema zapremine!";
+
+        document.getElementById("rezultat").innerHTML= "Zapremina valjka je:" + ispis;
+    }
+function racunajZapreminuKupe() {
+        var r= document.getElementById("poluprecnik").value;
+        var H= document.getElementById("visina").value;
+        var ispis;
+            if (r>0 && H>0){
+                ispis=r*r*H*Math.PI/3;
+                    }
+                else ispis=" nema zapremine!";
+
+        document.getElementById("rezultat").innerHTML= "Zapremina kupe je:" + ispis;
+    }
+    function racunajPovrsinuValjka() {
+        var r= document.getElementById("poluprecnik").value;
+        var H= document.getElementById("visina").value;
+        var ispis;
+            if (r>0 && H>0){
+                ispis=2*r*r*Math.PI + 2*r*r*Math.PI*H;
+}
+                else ispis=" nema povrsine!";
+
+        document.getElementById("rezultat").innerHTML= "Povrsina Valjka je:" + ispis;
+    }
+    function racunajPovrsinuKupe() {
+        var r= document.getElementById("poluprecnik").value;
+        var H= document.getElementById("visina").value;
+        var ispis;
+            if (r>0 && H>0){
+                ispis=r*r*Math.PI + r*Math.sqrt(r*r + H*H)*Math.PI;
+}
+        else
+        ispis=" nema zapremine!";
+
+document.getElementById("rezultat").innerHTML= "Povrsina Kupe je:" + ispis;
+    }
+    </script>
+</html>
